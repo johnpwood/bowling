@@ -1,4 +1,18 @@
 defmodule Bowling do
+  """
+  The Bowling module contains functions to validate and score a bowling game
+
+  usage in the test looks like:
+
+  rolls = a list of integers representing number of pins knocked down
+  game = Enum.reduce(rolls, Bowling.start(), fn(roll, g) -> Bowling.roll(g, roll) end)
+  then calls
+  Bowling.score(game)
+  to read the score (should only work at the end of the game
+  and return an error tuple if the game is not finished.)
+
+  """
+
   def start do
     %{
       score: 0,
